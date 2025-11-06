@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YesCoach - Sistema de Gestão para Professores de Tênis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-green-800 to-green-900 text-white sticky top-0 z-50 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <img 
+                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/9341e39a2_033470a6-c0e5-4e5c-9c58-c3daa2817de5.jpg"
+                        alt="YesCoach"
+                        class="h-12 object-contain"
+                    />
+                </div>
+                <a href__="#contato" class="bg-white text-green-800 hover:bg-green-50 font-bold px-6 py-2 rounded-lg">
+                    Começar Agora
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-green-800 via-green-900 to-green-950 text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Gerencie seu Tênis como um
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-100">
+                    Profissional
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-green-100 mb-12 max-w-3xl mx-auto">
+                Sistema completo para professores de tênis. Gestão de alunos, pagamentos, horários, evolução e muito mais - tudo em um só lugar.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href__="#contato" class="bg-white text-green-800 hover:bg-green-50 text-lg px-8 py-4 rounded-lg font-bold shadow-2xl inline-block">
+                    🚀 Teste Grátis por 7 Dias
+                </a>
+                <a href__="#funcionalidades" class="bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4 rounded-lg inline-block">
+                    Ver Funcionalidades
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funcionalidades -->
+    <section id="funcionalidades" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Tudo que você precisa em um só lugar
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    12 módulos completos para transformar sua gestão e impressionar seus alunos
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature Cards -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">👥</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Gestão de Alunos</h3>
+                    <p class="text-gray-600">Cadastre, organize e acompanhe todos os seus alunos em um único lugar</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">⏰</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Horários Inteligentes</h3>
+                    <p class="text-gray-600">Visualize e gerencie os horários de aulas de forma simples e prática</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">🔔</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Alarmes Automáticos</h3>
+                    <p class="text-gray-600">Lembretes de aula, vencimento e reposição enviados automaticamente por email</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-gray-500 to-gray-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">📄</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Contratos Digitais</h3>
+                    <p class="text-gray-600">Crie contratos personalizados que os alunos aceitam digitalmente no app</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">💰</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Controle Financeiro</h3>
+                    <p class="text-gray-600">Acompanhe pagamentos, receitas, despesas e lucros em tempo real</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">📈</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Evolução dos Alunos</h3>
+                    <p class="text-gray-600">Registre avaliações e acompanhe o progresso de cada aluno</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">🎥</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Biblioteca de Vídeos</h3>
+                    <p class="text-gray-600">Compartilhe vídeos técnicos e táticos com seus alunos</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">💬</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Mensagens Diretas</h3>
+                    <p class="text-gray-600">Comunique-se facilmente com alunos individuais ou grupos</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">🏆</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Registro de Jogos</h3>
+                    <p class="text-gray-600">Alunos podem registrar seus jogos e acompanhar estatísticas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="contato" class="py-20 bg-gradient-to-r from-green-800 to-green-950 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Pronto para transformar sua gestão?
+            </h2>
+            <p class="text-xl text-green-100 mb-12">
+                Junte-se a centenas de professores que já estão usando o YesCoach
+            </p>
+            
+            <div class="bg-white rounded-2xl p-8 text-left">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                    Solicite uma Demonstração Gratuita
+                </h3>
+                <form class="space-y-4" action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Nome Completo</label>
+                        <input 
+                            type="text" 
+                            name="nome"
+                            required
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-gray-900"
+                            placeholder="Seu nome"
+                        />
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Email</label>
+                        <input 
+                            type="email" 
+                            name="email"
+                            required
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-gray-900"
+                            placeholder="seu@email.com"
+                        />
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">WhatsApp</label>
+                        <input 
+                            type="tel" 
+                            name="whatsapp"
+                            required
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-gray-900"
+                            placeholder="(00) 00000-0000"
+                        />
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Quantos alunos você tem?</label>
+                        <select name="alunos" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-gray-900">
+                            <option value="">Selecione...</option>
+                            <option value="1-10">1-10 alunos</option>
+                            <option value="11-30">11-30 alunos</option>
+                            <option value="31-50">31-50 alunos</option>
+                            <option value="50+">Mais de 50 alunos</option>
+                        </select>
+                    </div>
+                    <button 
+                        type="submit"
+                        class="w-full bg-green-600 hover:bg-green-700 text-white py-4 text-lg font-bold rounded-lg"
+                    >
+                        Quero Começar Agora!
+                    </button>
+                </form>
+                <p class="text-center text-sm text-gray-500 mt-4">
+                    🔒 Seus dados estão seguros. Não compartilhamos com terceiros.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/9341e39a2_033470a6-c0e5-4e5c-9c58-c3daa2817de5.jpg"
+                alt="YesCoach"
+                class="h-12 object-contain mx-auto mb-6"
+            />
+            <p class="text-gray-400 mb-4">
+                © 2025 YesCoach - Sistema de Gestão para Professores de Tênis
+            </p>
+            <p class="text-gray-500 text-sm">
+                Transformando a gestão esportiva, uma quadra por vez 🎾
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
