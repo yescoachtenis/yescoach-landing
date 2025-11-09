@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" href__="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/37a26d98e_89a3d537-9317-4a8e-b26c-5fd683e0b2b7.jpeg" />
-  <link rel="apple-touch-icon" href__="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/37a26d98e_89a3d537-9317-4a8e-b26c-5fd683e0b2b7.jpeg" />
-  <meta name="theme-color" content="#1e90ff" />
-    <title>YesCoach - Sistema de Gestão para Professores de Tênis</title>
+    
+    <!-- 🎯 ÍCONE -->
+    <link rel="icon" href__="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/37a26d98e_89a3d537-9317-4a8e-b26c-5fd683e0b2b7.jpeg" />
+    <link rel="apple-touch-icon" href__="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/37a26d98e_89a3d537-9317-4a8e-b26c-5fd683e0b2b7.jpeg" />
+    <meta name="theme-color" content="#1e90ff" />
+    
+    <title>YesCoach - Sistema de Gestão para Professores</title>
+    <meta name="description" content="Sistema completo para professores. Gestão de alunos, pagamentos, horários, evolução e muito mais.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes fadeInUp {
@@ -22,65 +27,166 @@
         .animate-fade-in-up {
             animation: fadeInUp 0.8s ease-out;
         }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 12px;
+        }
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-modal:hover {
+            color: #FF8C00;
+        }
     </style>
 </head>
-<body class="bg-white">
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-green-800 to-green-900 text-white sticky top-0 z-50 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <img 
-                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/9341e39a2_033470a6-c0e5-4e5c-9c58-c3daa2817de5.jpg"
-                        alt="YesCoach"
-                        class="h-12 object-contain"
-                    />
-                </div>
-                <a href__="#contato" class="bg-white text-green-800 hover:bg-green-50 font-bold px-6 py-2 rounded-lg">
-                    Começar Agora
-                </a>
+<body class="bg-gradient-to-br from-gray-50 to-blue-50">
+    
+    <!-- Header com Logo Grande -->
+    <header class="bg-black py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center">
+                <img 
+                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/ee5adfd05_yesc.jpg"
+                    alt="YesCoach"
+                    class="h-24 md:h-32 object-contain animate-fade-in-up"
+                />
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-green-800 via-green-900 to-green-950 text-white py-20 md:py-32">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Gerencie seu Tênis como um
-                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-100">
-                    Profissional
-                </span>
-            </h1>
-            <p class="text-xl md:text-2xl text-green-100 mb-12 max-w-3xl mx-auto">
-                Sistema completo para professores de tênis. Gestão de alunos, pagamentos, horários, evolução e muito mais - tudo em um só lugar.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href__="#contato" class="bg-white text-green-800 hover:bg-green-50 text-lg px-8 py-4 rounded-lg font-bold shadow-2xl inline-block">
-                    🚀 Teste Grátis por 7 Dias
+    <!-- Seletor de Modalidades -->
+    <section class="py-8 bg-white border-b-2 border-gray-200">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Tênis -->
+                <a href__="#tenis" onclick="selecionarModalidade('tenis')" id="btn-tenis" class="modalidade-btn active">
+                    <div class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-6 text-center cursor-pointer hover:shadow-2xl transition-all transform hover:-translate-y-2 border-4 border-transparent">
+                        <img 
+                            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/811a08311_033470a6-c0e5-4e5c-9c58-c3daa2817de5.jpg"
+                            alt="Tênis"
+                            class="h-20 mx-auto mb-3 object-contain"
+                        />
+                        <h3 class="text-2xl font-bold text-white">Tênis</h3>
+                    </div>
                 </a>
-                <a href__="#funcionalidades" class="bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4 rounded-lg inline-block">
-                    Ver Funcionalidades
+
+                <!-- Personal -->
+                <a href__="#personal" onclick="mostrarEmDesenvolvimento(); return false;" id="btn-personal" class="modalidade-btn">
+                    <div class="bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl p-6 text-center cursor-pointer hover:shadow-2xl transition-all transform hover:-translate-y-2 border-4 border-transparent">
+                        <img 
+                            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/995ece2b7_0463e8f2-ddbc-48ea-b4c3-fcca91293b06.jpg"
+                            alt="Personal"
+                            class="h-20 mx-auto mb-3 object-contain"
+                        />
+                        <h3 class="text-2xl font-bold text-white">Personal</h3>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- Hero Section -->
+    <section id="tenis" class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white py-20 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-orange-500 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up relative z-10">
+            <div class="inline-block bg-orange-500/80 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                <span class="text-white font-bold">🚀 Teste Grátis por 7 Dias</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Gerencie seus treinos como um
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-200">
+                    Profissional
+                </span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto">
+                Sistema completo para professores. Gestão de alunos, pagamentos, horários, evolução e muito mais - tudo em um só lugar.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href__="#contato" class="bg-orange-500 text-white hover:bg-orange-600 text-lg px-8 py-4 rounded-lg font-bold shadow-2xl inline-flex items-center justify-center gap-2 transition transform hover:scale-105">
+                    🚀 Teste Grátis por 7 Dias
+                </a>
+                <a href__="#funcionalidades" class="bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4 rounded-lg inline-flex items-center justify-center gap-2 transition">
+                    Ver Funcionalidades
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-8 max-w-3xl mx-auto">
+                <div>
+                    <p class="text-4xl font-bold text-white">12</p>
+                    <p class="text-blue-300">Funcionalidades</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold text-white">100%</p>
+                    <p class="text-blue-300">Online</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold text-white">24/7</p>
+                    <p class="text-blue-300">Acesso</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Funcionalidades -->
-    <section id="funcionalidades" class="py-20 bg-gray-50">
+    <section id="funcionalidades" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                     Tudo que você precisa em um só lugar
                 </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    12 módulos completos para transformar sua gestão e impressionar seus alunos
+                    12 módulos completos para transformar sua gestão
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature Cards -->
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                <!-- 1. Gestão de Alunos -->
+                <div onclick="abrirModal('alunos')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
                     <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
                         <span class="text-white text-3xl">👥</span>
                     </div>
@@ -88,80 +194,221 @@
                     <p class="text-gray-600">Cadastre, organize e acompanhe todos os seus alunos em um único lugar</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                <!-- 2. Horários -->
+                <div onclick="abrirModal('horarios')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
                     <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
                         <span class="text-white text-3xl">⏰</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Horários Inteligentes</h3>
-                    <p class="text-gray-600">Visualize e gerencie os horários de aulas de forma simples e prática</p>
+                    <p class="text-gray-600">Visualize e gerencie os horários de aulas de forma prática</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                <!-- 3. Alarmes -->
+                <div onclick="abrirModal('alarmes')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
                     <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
                         <span class="text-white text-3xl">🔔</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Alarmes Automáticos</h3>
-                    <p class="text-gray-600">Lembretes de aula, vencimento e reposição enviados automaticamente por email</p>
+                    <p class="text-gray-600">Lembretes enviados automaticamente por email</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                <!-- 4. Contratos -->
+                <div onclick="abrirModal('contratos')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
                     <div class="w-16 h-16 bg-gradient-to-br from-gray-500 to-gray-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
                         <span class="text-white text-3xl">📄</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Contratos Digitais</h3>
-                    <p class="text-gray-600">Crie contratos personalizados que os alunos aceitam digitalmente no app</p>
+                    <p class="text-gray-600">Contratos que os alunos aceitam digitalmente</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                <!-- 5. Pagamentos -->
+                <div onclick="abrirModal('pagamentos')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
                     <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
                         <span class="text-white text-3xl">💰</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Controle Financeiro</h3>
-                    <p class="text-gray-600">Acompanhe pagamentos, receitas, despesas e lucros em tempo real</p>
+                    <p class="text-gray-600">Acompanhe pagamentos, receitas e lucros em tempo real</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                <!-- 6. Evolução -->
+                <div onclick="abrirModal('evolucao')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
                     <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
                         <span class="text-white text-3xl">📈</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Evolução dos Alunos</h3>
-                    <p class="text-gray-600">Registre avaliações e acompanhe o progresso de cada aluno</p>
+                    <p class="text-gray-600">Registre avaliações e acompanhe o progresso</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                <!-- 7. Vídeos -->
+                <div onclick="abrirModal('videos')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
                     <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
                         <span class="text-white text-3xl">🎥</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Biblioteca de Vídeos</h3>
-                    <p class="text-gray-600">Compartilhe vídeos técnicos e táticos com seus alunos</p>
+                    <p class="text-gray-600">Compartilhe vídeos técnicos com seus alunos</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                <!-- 8. Mensagens -->
+                <div onclick="abrirModal('mensagens')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
                     <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
                         <span class="text-white text-3xl">💬</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Mensagens Diretas</h3>
-                    <p class="text-gray-600">Comunique-se facilmente com alunos individuais ou grupos</p>
+                    <p class="text-gray-600">Comunique-se facilmente com alunos</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-green-200">
+                <!-- 9. Jogos -->
+                <div onclick="abrirModal('jogos')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
                     <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
                         <span class="text-white text-3xl">🏆</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Registro de Jogos</h3>
-                    <p class="text-gray-600">Alunos podem registrar seus jogos e acompanhar estatísticas</p>
+                    <p class="text-gray-600">Alunos registram jogos e estatísticas</p>
+                </div>
+
+                <!-- 10. Dicas -->
+                <div onclick="abrirModal('dicas')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
+                    <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">💡</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Biblioteca de Dicas</h3>
+                    <p class="text-gray-600">Compartilhe dicas técnicas com alunos</p>
+                </div>
+
+                <!-- 11. Cartão de Visita -->
+                <div onclick="abrirModal('cartao')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">👤</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Cartão de Visita Digital</h3>
+                    <p class="text-gray-600">Cartão digital profissional com QR Code</p>
+                </div>
+
+                <!-- 12. Reposição -->
+                <div onclick="abrirModal('reposicao')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
+                    <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                        <span class="text-white text-3xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Gestão de Reposições</h3>
+                    <p class="text-gray-600">Organize aulas de reposição automaticamente</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Planos -->
+    <section id="planos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Planos que cabem no seu bolso
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Escolha o plano ideal para o seu negócio
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Plano Profissional -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 border-4 border-blue-500 shadow-2xl relative transform hover:scale-105 transition">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">MAIS POPULAR</span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Profissional</h3>
+                        <p class="text-gray-600">Para professores autônomos</p>
+                    </div>
+
+                    <div class="text-center mb-8">
+                        <p class="text-5xl font-bold text-gray-900">R$ 49</p>
+                        <p class="text-gray-600">/mês</p>
+                    </div>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">✓</span>
+                            <span class="text-gray-700">Alunos ilimitados</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">✓</span>
+                            <span class="text-gray-700">Todas as 12 funcionalidades</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">✓</span>
+                            <span class="text-gray-700">Alarmes automáticos</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">✓</span>
+                            <span class="text-gray-700">Cartão de visita digital</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">✓</span>
+                            <span class="text-gray-700">Suporte prioritário</span>
+                        </li>
+                    </ul>
+
+                    <a href__="#contato" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-4 rounded-xl font-bold text-lg transition">
+                        Começar Agora
+                    </a>
+                </div>
+
+                <!-- Plano Academia -->
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl p-8 border-2 border-orange-300 shadow-xl transform hover:scale-105 transition">
+                    <div class="text-center mb-6">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Academia</h3>
+                        <p class="text-gray-600">Para escolas e academias</p>
+                    </div>
+
+                    <div class="text-center mb-8">
+                        <p class="text-5xl font-bold text-gray-900">R$ 199</p>
+                        <p class="text-gray-600">/mês</p>
+                    </div>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-500 text-xl">✓</span>
+                            <span class="text-gray-700">Professores ilimitados</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-500 text-xl">✓</span>
+                            <span class="text-gray-700">Alunos ilimitados</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-500 text-xl">✓</span>
+                            <span class="text-gray-700">Todas as funcionalidades</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-500 text-xl">✓</span>
+                            <span class="text-gray-700">Suporte dedicado</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-500 text-xl">✓</span>
+                            <span class="text-gray-700">Personalização avançada</span>
+                        </li>
+                    </ul>
+
+                    <a href__="#contato" class="block w-full bg-orange-600 hover:bg-orange-700 text-white text-center py-4 rounded-xl font-bold text-lg transition">
+                        Falar com Vendas
+                    </a>
+                </div>
+            </div>
+
+            <!-- Teste Grátis -->
+            <div class="mt-12 text-center bg-blue-50 rounded-2xl p-8 max-w-3xl mx-auto border-2 border-blue-200">
+                <p class="text-2xl font-bold text-gray-900 mb-2">🎉 Teste Grátis por 7 Dias</p>
+                <p class="text-gray-600">Experimente todas as funcionalidades sem compromisso. Cancele quando quiser!</p>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Final -->
-    <section id="contato" class="py-20 bg-gradient-to-r from-green-800 to-green-950 text-white">
+    <section id="contato" class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-6">
                 Pronto para transformar sua gestão?
             </h2>
-            <p class="text-xl text-green-100 mb-12">
+            <p class="text-xl text-blue-100 mb-12">
                 Junte-se a centenas de professores que já estão usando o YesCoach
             </p>
             
@@ -171,38 +418,38 @@
                 </h3>
                 <form class="space-y-4" action="https://formspree.io/f/xkgpdbpa" method="POST">
                     <div>
-                        <label class="block text-gray-700 font-medium mb-2">Nome Completo</label>
+                        <label class="block text-gray-700 font-medium mb-2">Nome Completo *</label>
                         <input 
                             type="text" 
                             name="nome"
                             required
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-gray-900"
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none text-gray-900"
                             placeholder="Seu nome"
                         />
                     </div>
                     <div>
-                        <label class="block text-gray-700 font-medium mb-2">Email</label>
+                        <label class="block text-gray-700 font-medium mb-2">Email *</label>
                         <input 
                             type="email" 
                             name="email"
                             required
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-gray-900"
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none text-gray-900"
                             placeholder="seu@email.com"
                         />
                     </div>
                     <div>
-                        <label class="block text-gray-700 font-medium mb-2">WhatsApp</label>
+                        <label class="block text-gray-700 font-medium mb-2">WhatsApp *</label>
                         <input 
                             type="tel" 
                             name="whatsapp"
                             required
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-gray-900"
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none text-gray-900"
                             placeholder="(00) 00000-0000"
                         />
                     </div>
                     <div>
-                        <label class="block text-gray-700 font-medium mb-2">Quantos alunos você tem?</label>
-                        <select name="alunos" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-gray-900">
+                        <label class="block text-gray-700 font-medium mb-2">Quantos alunos você tem? *</label>
+                        <select name="alunos" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none text-gray-900">
                             <option value="">Selecione...</option>
                             <option value="1-10">1-10 alunos</option>
                             <option value="11-30">11-30 alunos</option>
@@ -212,9 +459,9 @@
                     </div>
                     <button 
                         type="submit"
-                        class="w-full bg-green-600 hover:bg-green-700 text-white py-4 text-lg font-bold rounded-lg"
+                        class="w-full bg-orange-600 hover:bg-orange-700 text-white py-4 text-lg font-bold rounded-lg transition transform hover:scale-105"
                     >
-                        Quero Começar Agora!
+                        🚀 Quero Começar Agora!
                     </button>
                 </form>
                 <p class="text-center text-sm text-gray-500 mt-4">
@@ -226,21 +473,97 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/9341e39a2_033470a6-c0e5-4e5c-9c58-c3daa2817de5.jpg"
-                alt="YesCoach"
-                class="h-12 object-contain mx-auto mb-6"
-            />
-            <p class="text-gray-400 mb-4">
-                © 2025 YesCoach - Sistema de Gestão para Professores de Tênis
-            </p>
-            <p class="text-gray-500 text-sm">
-                Transformando a gestão esportiva, uma quadra por vez 🎾
-            </p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <img 
+                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/ee5adfd05_yesc.jpg"
+                        alt="YesCoach"
+                        class="h-12 object-contain mb-4"
+                    />
+                    <p class="text-gray-400 text-sm">
+                        Transformando a gestão esportiva 🏆
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href__="#funcionalidades" class="hover:text-white transition">Funcionalidades</a></li>
+                        <li><a href__="#planos" class="hover:text-white transition">Planos</a></li>
+                        <li><a href__="#contato" class="hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>📧 contato@yescoach.com.br</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 YesCoach - Sistema de Gestão para Professores. Todos os direitos reservados.
+                </p>
+            </div>
         </div>
     </footer>
+
+    <!-- Modal para screenshots -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <img id="modal-img" src="" alt="Screenshot">
+        </div>
+    </div>
+
+    <script>
+        // Seletor de modalidade
+        function selecionarModalidade(tipo) {
+            if (tipo === 'tenis') {
+                document.getElementById('btn-tenis').querySelector('div').classList.add('border-blue-500');
+                document.getElementById('btn-personal').querySelector('div').classList.remove('border-orange-500');
+            }
+        }
+
+        function mostrarEmDesenvolvimento() {
+            alert('🚧 Personal Training em desenvolvimento!\n\nEm breve você poderá gerenciar seus alunos de Personal Training também. 💪');
+        }
+
+        // Sistema de modais para screenshots
+        function abrirModal(funcionalidade) {
+            // Aqui você pode adicionar URLs reais dos screenshots
+            const screenshots = {
+                'alunos': 'https://via.placeholder.com/1200x800/3B82F6/FFFFFF?text=Gestão+de+Alunos',
+                'horarios': 'https://via.placeholder.com/1200x800/8B5CF6/FFFFFF?text=Horários',
+                'alarmes': 'https://via.placeholder.com/1200x800/EF4444/FFFFFF?text=Alarmes',
+                'contratos': 'https://via.placeholder.com/1200x800/6B7280/FFFFFF?text=Contratos',
+                'pagamentos': 'https://via.placeholder.com/1200x800/10B981/FFFFFF?text=Pagamentos',
+                'evolucao': 'https://via.placeholder.com/1200x800/F59E0B/FFFFFF?text=Evolução',
+                'videos': 'https://via.placeholder.com/1200x800/EC4899/FFFFFF?text=Vídeos',
+                'mensagens': 'https://via.placeholder.com/1200x800/6366F1/FFFFFF?text=Mensagens',
+                'jogos': 'https://via.placeholder.com/1200x800/EAB308/FFFFFF?text=Jogos',
+                'dicas': 'https://via.placeholder.com/1200x800/14B8A6/FFFFFF?text=Dicas',
+                'cartao': 'https://via.placeholder.com/1200x800/F97316/FFFFFF?text=Cartão+de+Visita',
+                'reposicao': 'https://via.placeholder.com/1200x800/06B6D4/FFFFFF?text=Reposição'
+            };
+
+            document.getElementById('modal-img').src = screenshots[funcionalidade];
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function fecharModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        // Fechar modal ao clicar fora
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                fecharModal();
+            }
+        });
+    </script>
 </body>
-
 </html>
-
