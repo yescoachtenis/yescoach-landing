@@ -36,6 +36,10 @@
             animation: float 3s ease-in-out infinite;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* Modal styles */
         .modal {
             display: none;
@@ -175,16 +179,19 @@
     <!-- Funcionalidades -->
     <section id="funcionalidades" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-8">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                     Tudo que você precisa em um só lugar
                 </h2>
+                <p class="text-2xl font-semibold text-blue-600 mb-4">
+                    Organize, Simplifique e Profissionalize seu trabalho como professor
+                </p>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     12 módulos completos para transformar sua gestão
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
                 <!-- 1. Gestão de Alunos -->
                 <div onclick="abrirModal('alunos')" class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border-2 hover:border-blue-400 transform hover:-translate-y-1 cursor-pointer">
                     <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
@@ -227,7 +234,7 @@
                         <span class="text-white text-3xl">💰</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Controle Financeiro</h3>
-                    <p class="text-gray-600">Acompanhe pagamentos, receitas e lucros em tempo real</p>
+                    <p class="text-gray-600">Acompanhe pagamentos, receitas e lucros em tempo real. Saiba exatamente quanto você ganha</p>
                 </div>
 
                 <!-- 6. Evolução -->
@@ -236,7 +243,7 @@
                         <span class="text-white text-3xl">📈</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Evolução dos Alunos</h3>
-                    <p class="text-gray-600">Registre avaliações e acompanhe o progresso</p>
+                    <p class="text-gray-600">Registre avaliações e acompanhe o progresso de cada aluno. Mostre resultados e valorize seu trabalho</p>
                 </div>
 
                 <!-- 7. Vídeos -->
@@ -245,7 +252,7 @@
                         <span class="text-white text-3xl">🎥</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Biblioteca de Vídeos</h3>
-                    <p class="text-gray-600">Compartilhe vídeos técnicos com seus alunos</p>
+                    <p class="text-gray-600">Compartilhe vídeos técnicos e análises com seus alunos</p>
                 </div>
 
                 <!-- 8. Mensagens -->
@@ -254,7 +261,7 @@
                         <span class="text-white text-3xl">💬</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Mensagens Diretas</h3>
-                    <p class="text-gray-600">Comunique-se facilmente com alunos</p>
+                    <p class="text-gray-600">Mantenha registradas as conversas com seus alunos, sem se perder entre aplicativos</p>
                 </div>
 
                 <!-- 9. Jogos -->
@@ -263,7 +270,7 @@
                         <span class="text-white text-3xl">🏆</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Registro de Jogos</h3>
-                    <p class="text-gray-600">Alunos registram jogos e estatísticas</p>
+                    <p class="text-gray-600">Alunos registram jogos e estatísticas. Acompanhe o desempenho dos seus alunos</p>
                 </div>
 
                 <!-- 10. Dicas -->
@@ -272,7 +279,7 @@
                         <span class="text-white text-3xl">💡</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Biblioteca de Dicas</h3>
-                    <p class="text-gray-600">Compartilhe dicas técnicas com alunos</p>
+                    <p class="text-gray-600">Compartilhe dicas técnicas e orientações com seus alunos</p>
                 </div>
 
                 <!-- 11. Cartão de Visita -->
@@ -281,7 +288,7 @@
                         <span class="text-white text-3xl">👤</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Cartão de Visita Digital</h3>
-                    <p class="text-gray-600">Cartão digital profissional com QR Code</p>
+                    <p class="text-gray-600">Você e seus alunos podem compartilhar seu cartão profissional digital com QR Code, de forma prática, moderna e 100% personalizável</p>
                 </div>
 
                 <!-- 12. Reposição -->
@@ -290,8 +297,15 @@
                         <span class="text-white text-3xl">⚡</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Gestão de Reposições</h3>
-                    <p class="text-gray-600">Organize aulas de reposição automaticamente</p>
+                    <p class="text-gray-600">Organize aulas de reposição automaticamente, sem confusão e com mais profissionalismo</p>
                 </div>
+            </div>
+
+            <!-- Nova frase embaixo dos botões -->
+            <div class="mt-12 text-center max-w-4xl mx-auto">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    O YesCoach foi criado para simplificar o dia a dia dos professores, aumentar a produtividade e deixar mais tempo livre para o que realmente importa: <strong class="text-blue-600">ensinar e ver seus alunos evoluírem</strong>.
+                </p>
             </div>
         </div>
     </section>
@@ -301,20 +315,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                    Planos que cabem no seu bolso
+                    Plano Profissional
                 </h2>
                 <p class="text-xl text-gray-600">
-                    Escolha o plano ideal para o seu negócio
+                    Tudo que você precisa para gerenciar seus alunos
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="max-w-2xl mx-auto">
                 <!-- Plano Profissional -->
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 border-4 border-blue-500 shadow-2xl relative transform hover:scale-105 transition">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">MAIS POPULAR</span>
-                    </div>
-                    
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 border-4 border-blue-500 shadow-2xl transform hover:scale-105 transition">
                     <div class="text-center mb-6">
                         <h3 class="text-3xl font-bold text-gray-900 mb-2">Profissional</h3>
                         <p class="text-gray-600">Para professores autônomos</p>
@@ -346,58 +356,25 @@
                             <span class="text-orange-500 text-xl">✓</span>
                             <span class="text-gray-700">Suporte prioritário</span>
                         </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">✓</span>
+                            <span class="text-gray-700">Atualizações gratuitas</span>
+                        </li>
                     </ul>
 
                     <a href__="#contato" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-4 rounded-xl font-bold text-lg transition">
                         Começar Agora
                     </a>
                 </div>
-
-                <!-- Plano Academia -->
-                <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl p-8 border-2 border-orange-300 shadow-xl transform hover:scale-105 transition">
-                    <div class="text-center mb-6">
-                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Academia</h3>
-                        <p class="text-gray-600">Para escolas e academias</p>
-                    </div>
-
-                    <div class="text-center mb-8">
-                        <p class="text-5xl font-bold text-gray-900">R$ 199</p>
-                        <p class="text-gray-600">/mês</p>
-                    </div>
-
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3">
-                            <span class="text-blue-500 text-xl">✓</span>
-                            <span class="text-gray-700">Professores ilimitados</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-blue-500 text-xl">✓</span>
-                            <span class="text-gray-700">Alunos ilimitados</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-blue-500 text-xl">✓</span>
-                            <span class="text-gray-700">Todas as funcionalidades</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-blue-500 text-xl">✓</span>
-                            <span class="text-gray-700">Suporte dedicado</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-blue-500 text-xl">✓</span>
-                            <span class="text-gray-700">Personalização avançada</span>
-                        </li>
-                    </ul>
-
-                    <a href__="#contato" class="block w-full bg-orange-600 hover:bg-orange-700 text-white text-center py-4 rounded-xl font-bold text-lg transition">
-                        Falar com Vendas
-                    </a>
-                </div>
             </div>
 
             <!-- Teste Grátis -->
             <div class="mt-12 text-center bg-blue-50 rounded-2xl p-8 max-w-3xl mx-auto border-2 border-blue-200">
-                <p class="text-2xl font-bold text-gray-900 mb-2">🎉 Teste Grátis por 7 Dias</p>
-                <p class="text-gray-600">Experimente todas as funcionalidades sem compromisso. Cancele quando quiser!</p>
+                <p class="text-2xl font-bold text-gray-900 mb-3">🎉 Teste Grátis por 7 Dias</p>
+                <p class="text-gray-600 mb-2">Experimente todas as funcionalidades sem compromisso. Cancele quando quiser!</p>
+                <p class="text-lg font-semibold text-blue-700 mt-4">
+                    Comece hoje mesmo! Leve sua carreira de professor a um novo nível com YesCoach.
+                </p>
             </div>
         </div>
     </section>
@@ -474,7 +451,7 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div>
                     <img 
                         src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/ee5adfd05_yesc.jpg"
@@ -487,18 +464,9 @@
                 </div>
                 
                 <div>
-                    <h4 class="font-bold mb-4">Links Rápidos</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href__="#funcionalidades" class="hover:text-white transition">Funcionalidades</a></li>
-                        <li><a href__="#planos" class="hover:text-white transition">Planos</a></li>
-                        <li><a href__="#contato" class="hover:text-white transition">Contato</a></li>
-                    </ul>
-                </div>
-                
-                <div>
                     <h4 class="font-bold mb-4">Contato</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
-                        <li>📧 contato@yescoach.com.br</li>
+                        <li>📧 yescoach.br@gmail.com</li>
                     </ul>
                 </div>
             </div>
@@ -534,7 +502,7 @@
 
         // Sistema de modais para screenshots
         function abrirModal(funcionalidade) {
-            // Aqui você pode adicionar URLs reais dos screenshots
+            // AQUI VOCÊ VAI SUBSTITUIR POR URLs REAIS DOS SCREENSHOTS
             const screenshots = {
                 'alunos': 'https://via.placeholder.com/1200x800/3B82F6/FFFFFF?text=Gestão+de+Alunos',
                 'horarios': 'https://via.placeholder.com/1200x800/8B5CF6/FFFFFF?text=Horários',
@@ -567,3 +535,7 @@
     </script>
 </body>
 </html>
+
+         
+              
+     
