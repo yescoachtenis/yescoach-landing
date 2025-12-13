@@ -628,7 +628,7 @@
       formData.forEach((value, key) => { data[key] = value; });
       
       try {
-        const response = await fetch('https://68f40633b32516c6bb0a7355.app.base44.com/api/functions/enviarEmailContato', {
+        const response = await fetch('/api/send-lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -665,7 +665,7 @@
       formData.forEach((value, key) => { data[key] = value; });
       
       try {
-        const response = await fetch('https://68f40633b32516c6bb0a7355.app.base44.com/api/functions/enviarEmailContato', {
+        const response = await fetch('/api/send-lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -693,3 +693,4 @@
 
 </body>
 </html>
+
