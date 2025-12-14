@@ -1,149 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YesCoach - Sistema completo de gestão para professores de esporte">
   <title>YesCoach - Gestão Esportiva Profissional</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    body { font-family: Inter, system-ui, sans-serif; }
-    .hide { display: none; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    * { font-family: 'Inter', sans-serif; }
+    .hide { display: none !important; }
   </style>
 </head>
 
 <body class="bg-white">
 
 <!-- ================= LANDING ================= -->
-<div id="page-landing" class="page">
-
-  <header class="bg-black text-white py-8 text-center">
+<div id="page-landing">
+  <header class="bg-black text-white py-6 text-center">
     <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/f3373f7c0_yesc.jpg"
-         class="h-24 mx-auto" />
+      class="h-28 mx-auto" />
   </header>
 
   <section class="bg-gradient-to-br from-blue-600 to-blue-900 text-white py-20 text-center">
     <h1 class="text-5xl font-bold mb-6">Gerencie seu negócio como um profissional</h1>
     <p class="text-xl mb-12">Sistema completo para professores de esporte</p>
 
-    <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-
-      <!-- CARD TENIS -->
-      <div class="bg-white text-gray-900 rounded-3xl p-8 shadow-xl">
-        <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/7d2f28218_033470a6-c0e5-4e5c-9c58-c3daa2817de5.jpg"
-             class="h-28 mx-auto mb-6" />
-        <h2 class="text-3xl font-bold mb-3">YesCoach Tênis</h2>
-        <p class="mb-6">Sistema completo para professores de tênis</p>
-
-        <button onclick="showPage('tenis')" class="text-blue-600 font-semibold">
-          Conhecer o sistema →
-        </button>
-
-        <div class="mt-4">
-          <button onclick="irParaFormularioTenis()"
-                  class="text-sm underline text-gray-500 hover:text-blue-600">
-            Preencher formulário
-          </button>
-        </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- TENIS -->
+      <div class="bg-white text-black rounded-3xl p-8 cursor-pointer hover:scale-105 transition"
+           onclick="showPage('tenis')">
+        <h2 class="text-3xl font-bold mb-4">YesCoach Tênis</h2>
+        <p>Sistema completo para professores de tênis</p>
       </div>
 
-      <!-- CARD PERSONAL -->
-      <div class="bg-white text-gray-900 rounded-3xl p-8 shadow-xl">
-        <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/342157047_0463e8f2-ddbc-48ea-b4c3-fcca91293b06.jpg"
-             class="h-28 mx-auto mb-6" />
-        <h2 class="text-3xl font-bold mb-3">YesCoach Personal</h2>
-        <p class="mb-6">Sistema para personal trainers</p>
-
-        <button onclick="showPage('personal')" class="text-orange-600 font-semibold">
-          Conhecer o sistema →
-        </button>
+      <!-- PERSONAL -->
+      <div class="bg-white text-black rounded-3xl p-8 cursor-pointer hover:scale-105 transition"
+           onclick="showPage('personal')">
+        <h2 class="text-3xl font-bold mb-4">YesCoach Personal</h2>
+        <p>Sistema para personal trainers</p>
       </div>
-
     </div>
-  </section>
 
+    <!-- ATALHO FORM -->
+    <button onclick="irParaFormularioTenis()"
+      class="mt-12 underline text-lg">
+      Preencher formulário
+    </button>
+  </section>
 </div>
 
 <!-- ================= PAGE TENIS ================= -->
-<div id="page-tenis" class="page hide">
+<div id="page-tenis" class="hide">
 
-<header class="bg-black text-white py-6 flex justify-between px-6">
+<header class="bg-black text-white p-4 flex justify-between">
   <button onclick="showPage('landing')">← Voltar</button>
-  <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/f3373f7c0_yesc.jpg"
-       class="h-16" />
-  <div></div>
+  <span>YesCoach Tênis</span>
 </header>
 
-<section class="py-16 text-center">
-  <h2 class="text-4xl font-bold mb-4">Tudo que você precisa em um só lugar</h2>
-  <p class="text-gray-600">12 módulos completos para organizar sua rotina</p>
+<section class="py-12 text-center">
+  <p class="text-3xl">
+    O aplicativo <strong>YesCoach Tênis</strong> foi desenvolvido para organizar e profissionalizar
+    o dia a dia dos professores de tênis.
+  </p>
 </section>
 
-<!-- (cards explicativos resumidos aqui, mantendo estrutura) -->
+<!-- ===== 12 CARDS ===== -->
+<section class="py-16 max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-4">
+  <div class="p-6 border rounded-xl">👥 <strong>Gestão de Alunos</strong><p>Cadastre e organize seus alunos</p></div>
+  <div class="p-6 border rounded-xl">⏰ <strong>Horários</strong><p>Controle total da agenda</p></div>
+  <div class="p-6 border rounded-xl">🔔 <strong>Alarmes</strong><p>Lembretes automáticos</p></div>
+  <div class="p-6 border rounded-xl">💰 <strong>Financeiro</strong><p>Controle de pagamentos</p></div>
+  <div class="p-6 border rounded-xl">📈 <strong>Evolução</strong><p>Acompanhe progresso</p></div>
+  <div class="p-6 border rounded-xl">🎥 <strong>Vídeos</strong><p>Conteúdo técnico</p></div>
+  <div class="p-6 border rounded-xl">💬 <strong>Mensagens</strong><p>Comunicação direta</p></div>
+  <div class="p-6 border rounded-xl">🏆 <strong>Jogos</strong><p>Registro de partidas</p></div>
+  <div class="p-6 border rounded-xl">⚡ <strong>Reposição</strong><p>Controle inteligente</p></div>
+  <div class="p-6 border rounded-xl">🎖️ <strong>Cartão Digital</strong><p>QR Code profissional</p></div>
+  <div class="p-6 border rounded-xl">🎯 <strong>Dicas</strong><p>Conteúdo técnico</p></div>
+  <div class="p-6 border rounded-xl">📄 <strong>Contratos</strong><p>Contratos digitais</p></div>
+</section>
 
+<!-- ===== FORM TENIS ===== -->
 <section id="form-tenis" class="py-20 bg-gray-50">
-  <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-xl">
-
-    <h3 class="text-3xl font-bold mb-6 text-center">Comece seu teste grátis</h3>
-
-    <form action="https://formspree.io/f/xkgpdbpa" method="POST" class="space-y-4">
-      <input type="text" name="cupom" placeholder="Cupom de indicação (opcional)" class="w-full border p-3 rounded" />
-      <input type="text" name="nome" required placeholder="Nome completo" class="w-full border p-3 rounded" />
-      <input type="email" name="email" required placeholder="Email" class="w-full border p-3 rounded" />
-      <input type="tel" name="whatsapp" required placeholder="WhatsApp" class="w-full border p-3 rounded" />
-
-      <button class="w-full bg-blue-600 text-white py-4 rounded font-bold">
-        Enviar 🚀
-      </button>
-    </form>
-
-  </div>
-</section>
-
-</div>
-
-<!-- ================= PAGE PERSONAL ================= -->
-<div id="page-personal" class="page hide">
-
-<header class="bg-black text-white py-6 flex justify-between px-6">
-  <button onclick="showPage('landing')">← Voltar</button>
-  <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/f3373f7c0_yesc.jpg"
-       class="h-16" />
-  <div></div>
-</header>
-
-<section class="py-20 text-center">
-  <h2 class="text-4xl font-bold mb-4">YesCoach Personal</h2>
-  <p class="mb-8">Em desenvolvimento</p>
-
   <form action="https://formspree.io/f/xkgpdbpa" method="POST"
-        class="max-w-md mx-auto space-y-4">
-    <input type="hidden" name="interesse" value="Personal Trainer" />
-    <input type="text" name="nome" required placeholder="Nome" class="w-full border p-3 rounded" />
-    <input type="email" name="email" required placeholder="Email" class="w-full border p-3 rounded" />
-    <input type="tel" name="whatsapp" required placeholder="WhatsApp" class="w-full border p-3 rounded" />
+        class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow space-y-4">
 
-    <button class="w-full bg-orange-600 text-white py-4 rounded font-bold">
-      Quero ser avisado 📧
+    <input type="hidden" name="origem" value="YesCoach Tênis">
+
+    <input name="cupom" placeholder="Cupom (opcional)" class="w-full border p-3">
+    <input name="nome" placeholder="Nome" required class="w-full border p-3">
+    <input name="email" type="email" placeholder="Email" required class="w-full border p-3">
+    <input name="whatsapp" placeholder="WhatsApp" required class="w-full border p-3">
+
+    <button class="w-full bg-blue-600 text-white py-3 rounded">
+      Começar Teste Grátis
     </button>
   </form>
 </section>
 
 </div>
 
-<!-- ================= JS ================= -->
+<!-- ================= PAGE PERSONAL ================= -->
+<div id="page-personal" class="hide">
+
+<header class="bg-black text-white p-4 flex justify-between">
+  <button onclick="showPage('landing')">← Voltar</button>
+  <span>YesCoach Personal</span>
+</header>
+
+<section class="py-16 text-center">
+  <h2 class="text-4xl font-bold mb-6">Em Desenvolvimento</h2>
+  <p class="mb-8">Deixe seu contato para ser avisado</p>
+
+  <form action="https://formspree.io/f/xkgpdbpa" method="POST"
+        class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow space-y-4">
+
+    <input type="hidden" name="origem" value="YesCoach Personal">
+
+    <input name="nome" placeholder="Nome" required class="w-full border p-3">
+    <input name="email" type="email" placeholder="Email" required class="w-full border p-3">
+    <input name="whatsapp" placeholder="WhatsApp" required class="w-full border p-3">
+
+    <button class="w-full bg-orange-600 text-white py-3 rounded">
+      Quero ser avisado
+    </button>
+  </form>
+</section>
+
+</div>
+
 <script>
-function showPage(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.add('hide'));
-  document.getElementById('page-' + page).classList.remove('hide');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function showPage(p) {
+  ['page-landing','page-tenis','page-personal'].forEach(id =>
+    document.getElementById(id).classList.add('hide')
+  );
+  document.getElementById('page-' + p).classList.remove('hide');
+  window.scrollTo(0,0);
 }
 
 function irParaFormularioTenis() {
   showPage('tenis');
   setTimeout(() => {
-    document.getElementById('form-tenis')
-      .scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('form-tenis').scrollIntoView({behavior:'smooth'});
   }, 200);
 }
 </script>
