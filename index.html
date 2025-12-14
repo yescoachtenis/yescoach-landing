@@ -114,7 +114,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div class="fade-in">
             <div onclick="showPage('tenis')" class="cursor-pointer group btn-hover">
-              <div class="bg-white rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 transform hover:scale-105 h-full">
+              <div class="bg-white rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 transform hover:scale-105">
                 <img 
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/7d2f28218_033470a6-c0e5-4e5c-9c58-c3daa2817de5.jpg"
                   alt="YesCoach Tênis"
@@ -131,28 +131,30 @@
               </div>
             </div>
             
-            <!-- Link para formulário -->
+            <!-- Link para formulário com cor branca -->
             <div class="mt-4 text-center">
-              <button onclick="showPageAndScrollToForm('tenis')" class="text-blue-600 hover:text-blue-700 underline font-semibold text-lg">
+              <button onclick="showPageAndScrollToForm('tenis')" class="text-white hover:text-yellow-300 underline font-semibold text-lg">
                 📝 Preencher formulário
               </button>
             </div>
           </div>
 
-          <div onclick="showPage('personal')" class="cursor-pointer group btn-hover fade-in">
-            <div class="bg-white rounded-3xl p-8 shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105 h-full">
-              <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/342157047_0463e8f2-ddbc-48ea-b4c3-fcca91293b06.jpg"
-                alt="YesCoach Personal"
-                class="h-32 object-contain mx-auto mb-6"
-              />
-              <h2 class="text-4xl font-bold text-gray-900 mb-4">YesCoach Personal</h2>
-              <p class="text-gray-600 text-lg mb-6">Sistema completo para personal trainers e academias</p>
-              <div class="flex items-center justify-center gap-2 text-orange-600 font-semibold">
-                <span>Conhecer o Sistema</span>
-                <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
+          <div class="fade-in">
+            <div onclick="showPage('personal')" class="cursor-pointer group btn-hover">
+              <div class="bg-white rounded-3xl p-8 shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105">
+                <img 
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f40633b32516c6bb0a7355/342157047_0463e8f2-ddbc-48ea-b4c3-fcca91293b06.jpg"
+                  alt="YesCoach Personal"
+                  class="h-32 object-contain mx-auto mb-6"
+                />
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">YesCoach Personal</h2>
+                <p class="text-gray-600 text-lg mb-6">Sistema completo para personal trainers e academias</p>
+                <div class="flex items-center justify-center gap-2 text-orange-600 font-semibold">
+                  <span>Conhecer o Sistema</span>
+                  <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -629,3 +631,4 @@
 
 </body>
 </html>
+
